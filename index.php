@@ -1,4 +1,7 @@
-<?php require 'includes/header.php'; ?>
+<?php 
+    $title = "Home Page";
+    require 'includes/header.php'; 
+?>
 
 <main>
     <section id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
