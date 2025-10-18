@@ -3,7 +3,7 @@
     require 'includes/header.php'; 
 ?>
 
-<main>
+<main class="container py-5 my-5">
     <!-- Pricing Cards Section -->
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <!-- Free Plan Card -->
