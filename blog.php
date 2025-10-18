@@ -1,4 +1,8 @@
-<?php require 'includes/header.php'; ?>
+<?php 
+    $title = "Blog";
+    require 'includes/header.php'; 
+
+?>
 
         <!-- Main Content -->
         <main>

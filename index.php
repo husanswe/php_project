@@ -1,5 +1,5 @@
 <?php 
-    $title = "Home Page";
+    $title = "Home";
     require 'includes/header.php'; 
 ?>
 
