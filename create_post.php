@@ -1,6 +1,7 @@
 <?php
     $title = "Create Post"; 
     require 'includes/header.php';
+    require "database.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
