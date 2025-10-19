@@ -1,6 +1,7 @@
 <?php 
     $title = "Home";
     require 'includes/header.php'; 
+    require "database.php";
 ?>
 
 <main>
