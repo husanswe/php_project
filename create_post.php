@@ -24,9 +24,11 @@
                 <label class="form-label">Content</label>
                 <textarea name="content" class="form-control" rows="3"></textarea>
             </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
         </form>
 
-        <button type="submit" class="btn btn-primary">Save</button>
+        
     </div>
 </div>
 
