@@ -2,6 +2,9 @@
     $title = "Blog";
     require 'includes/header.php'; 
 
+    /* if(isset($_SESSION["post-created"])) {
+        $message = $_SESSION["post-created"];
+    } */
 ?>
 
         <!-- Main Content -->
@@ -25,11 +28,13 @@
             <div class="album py-5 bg-body-tertiary">
                 <div class="container">
                     
-                    <div class="container-fluid mb-5">
+                <?php 
+                    if(isset($_SESSION["post-created"])): ?>
                         <div class="alert alert-success" role="alert">
-                            A simple success alert—check it out!
+                            <?= $_SESSION["post-created"]; ?>
+                            <?php unset($_SESSION["post-created"]); ?>
                         </div>
-                    </div>
+                <?php endif; ?>
 
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <!-- Album Cards (9 identical cards) -->
