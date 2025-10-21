@@ -6,13 +6,15 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $title = $_POST['title'];
-        $content = $_POST['content'];
+        $body = $_POST['body'];
 
-        $statement = $pdo->prepare("INSERT_INTO posts (title, content) VALUES (:title, :content)");
-        $statement->execute([
+        $statement = $pdo->prepare("INSERT INTO posts (title, body) VALUES (:title, :body)");
+        $statement-> execute ([
             "title" => $title,
-            "content" => $content
+            "body" => $body
         ]);
+
+        echo "POST created successfully";
     }
 ?>
 
@@ -30,8 +32,8 @@
                 <input name="title" type="text" class="form-control" placeholder="Post Title">
             </div>
             <div class="mb-3">
-                <label class="form-label">Content</label>
-                <textarea name="content" class="form-control" rows="3"></textarea>
+                <label class="form-label">Body</label>
+                <textarea name="body" class="form-control" rows="3"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>
