@@ -5,11 +5,19 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+
+        $statement = $pdo->prepare("INSERT_INTO posts (title, content) VALUES (:title, :content)");
+        $statement->execute([
+            "title" => $title,
+            "content" => $content
+        ]);
     }
 ?>
 
+
 <div class="container-xxl container-fluid my-5 px-5 vh-100">
-    
     <div class="p-5 mb-4 bg-body-tertiary rounded-3">
 
         <div class="py-5">
@@ -29,7 +37,6 @@
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
 
-        
     </div>
 </div>
 
