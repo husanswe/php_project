@@ -14,6 +14,8 @@
             "body" => $body
         ]);
 
+        $_SESSION["post-created"] = "Post created successfully.";
+
         header("Location: blog.php");
 
     }

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,6 +39,7 @@
                 </button>
             </li>
         </ul>
+
         <header data-bs-theme="dark">
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="container-fluid">
@@ -65,5 +70,6 @@
                 </div>
             </nav>
         </header> 
+        
     </body>
 </html>

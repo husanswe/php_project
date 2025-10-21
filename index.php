@@ -44,7 +44,7 @@
                 </svg>
                 <div class="container">
                     <div class="carousel-caption text-end">
-                        <img src="./images/image3.jpg" alt="Image 3" class="d-block mx-auto mb-4" style="width: 50%; height: auto;">
+                        <img src="./images/image3.jpg" alt="Image 3. $1M cash" class="d-block mx-auto mb-4" style="width: 50%; height: auto;">
                         <h1>One more for good measure.</h1>
                         <p>Some representative placeholder content for the third slide of this carousel.</p>
                         <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>

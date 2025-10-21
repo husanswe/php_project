@@ -7,7 +7,7 @@
         <!-- Main Content -->
         <main>
             <!-- Hero Section -->
-            <section class="py-5 text-center container">
+            <section class="py-5 text-center container-fluid">
                 <div class="row py-lg-5">
                     <div class="col-lg-6 col-md-8 mx-auto">
                         <h1 class="fw-light">Our Blog</h1>
@@ -17,12 +17,20 @@
                             <a href="index.php" class="btn btn-secondary my-2">Home Page</a>
                         </p>
                     </div>
+
                 </div>
             </section>
 
             <!-- Album Grid -->
             <div class="album py-5 bg-body-tertiary">
                 <div class="container">
+                    
+                    <div class="container-fluid mb-5">
+                        <div class="alert alert-success" role="alert">
+                            A simple success alert—check it out!
+                        </div>
+                    </div>
+
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <!-- Album Cards (9 identical cards) -->
                         <?php for($i = 0; $i < 9; $i++): ?>
