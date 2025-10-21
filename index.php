@@ -18,6 +18,7 @@
                 </svg>
                 <div class="container">
                     <div class="carousel-caption text-start">
+                        <img src="./images/image1.jpg" alt="Image 1" class="d-block mx-auto mb-4" style="width: 60%; height: auto;">
                         <h1>Example headline.</h1>
                         <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
                         <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
@@ -29,7 +30,8 @@
                     <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
                 </svg>
                 <div class="container">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption"> 
+                        <img src="./images/tesla.jpg" alt="Image 2" class="d-block mx-auto mb-4" style="width: 60%; height: auto;">
                         <h1>Another example headline.</h1>
                         <p>Some representative placeholder content for the second slide of the carousel.</p>
                         <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
@@ -42,6 +44,7 @@
                 </svg>
                 <div class="container">
                     <div class="carousel-caption text-end">
+                        <img src="./images/image3.jpg" alt="Image 3" class="d-block mx-auto mb-4" style="width: 50%; height: auto;">
                         <h1>One more for good measure.</h1>
                         <p>Some representative placeholder content for the third slide of this carousel.</p>
                         <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>

@@ -14,7 +14,8 @@
             "body" => $body
         ]);
 
-        echo "POST created successfully";
+        header("Location: blog.php");
+
     }
 ?>
 
