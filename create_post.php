@@ -12,7 +12,7 @@
     
     <div class="p-5 mb-4 bg-body-tertiary rounded-3">
 
-        <div class="container-fluid py-5">
+        <div class="py-5">
             <h1 class="display-5 fw-bold">Create post</h1>
         </div>
 
