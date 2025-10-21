@@ -2,9 +2,13 @@
     $title = "Blog";
     require 'includes/header.php'; 
 
-    /* if(isset($_SESSION["post-created"])) {
-        $message = $_SESSION["post-created"];
-    } */
+    require "database.php";
+
+    $statement = $pdo->prepare("SELECT * FROM posts");
+    $statement->execute();
+
+    $posts = $statement->fetchAll();
+
 ?>
 
         <!-- Main Content -->
@@ -37,8 +41,8 @@
                 <?php endif; ?>
 
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <!-- Album Cards (9 identical cards) -->
-                        <?php for($i = 0; $i < 9; $i++): ?>
+                        <!-- 9 Identical Album cards) -->
+                    <?php foreach($posts as $post): ?>
                         <div class="col">
                             <div class="card shadow-sm">
                                 <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg">
@@ -46,18 +50,19 @@
                                     <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
                                 </svg>
                                 <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                    <h5><?= $post["title"]; ?></h5>
+                                    <p class="card-text"> <?= $post["body"]; ?></p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                                             <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                         </div>
-                                        <small class="text-body-secondary">9 mins</small>
+                                        <small class="text-body-secondary"><?= $post["created_at"]; ?></small>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <?php endfor; ?>
+                    <?php endforeach; ?>
                     </div>
                 </div>
             </div>
