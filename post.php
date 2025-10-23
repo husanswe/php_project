@@ -21,7 +21,6 @@
         <meta name="generator" content="Astro v5.13.2">
         <meta name="theme-color" content="#712cf9">
         
-        
         <title>Starter Template · Bootstrap v5.3</title>
         
         <!-- Bootstrap CSS -->
@@ -54,6 +53,7 @@
 
             <!-- Main Content Area -->
             <main>
+                <h3> <?= $post["id"]; ?> </h3>
                 <h1 class="text-body-emphasis"><?= $post["title"]; ?></h1>
                 <p class="fs-5 col-md-8">
                     <?= $post["body"]; ?>
