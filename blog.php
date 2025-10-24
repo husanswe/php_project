@@ -6,8 +6,16 @@
 
     $statement = $pdo->prepare("SELECT * FROM posts");
     $statement->execute();
-
     $posts = $statement->fetchAll();
+
+    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["DELETE"])) {
+
+        $post_id = $_POST["post_id"];
+        $statement = $pdo->prepare("DELETE FROM posts WHERE id = ?");
+        $statement->execute([$post_id]);
+
+        header("Location: blog.php");
+    }
 
 ?>
 
@@ -57,8 +65,13 @@
                                     <p class="card-text"> <?= $post["body"]; ?></p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                                             <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+
+                                            <form method="post" action="">
+                                                <input type="hidden" name="post_id" value="<?= $post['id']; ?>">
+                                                <input type="hidden" name="DELETE">
+                                                <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+                                            </form>
                                         </div>
                                         <small class="text-body-secondary"><?= $post["created_at"]; ?></small>
                                     </div>
