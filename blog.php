@@ -1,6 +1,6 @@
 <?php 
     ob_start();
-    
+
     $title = "Blog";
     require 'includes/header.php';
     require "database.php";
@@ -14,6 +14,8 @@
         $post_id = $_POST["post_id"];
         $statement = $pdo->prepare("DELETE FROM posts WHERE id = ?");
         $statement->execute([$post_id]);
+
+        $_SESSION["post-deleted"] = "Post has been deleted successfully.";
 
         header("Location: blog.php");
         exit;
@@ -50,6 +52,14 @@
                         </div>
                 <?php endif; ?>
 
+                <?php 
+                    if(isset($_SESSION["post-deleted"])): ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= $_SESSION["post-deleted"]; ?>
+                            <?php unset($_SESSION["post-deleted"]); ?>
+                        </div>
+                <?php endif; ?>
+
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <!-- 9 Identical Album cards) -->
                     <?php foreach($posts as $post): ?>
@@ -69,7 +79,7 @@
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 
-                                            <form method="post" action="">
+                                            <form method="post" action="" onsubmit="return confirm('Are you sure you want to delete this post?');" style="display: inline;">
                                                 <input type="hidden" name="post_id" value="<?= $post['id']; ?>">
                                                 <input type="hidden" name="DELETE">
                                                 <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
