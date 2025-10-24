@@ -1,7 +1,8 @@
 <?php 
+    ob_start();
+    
     $title = "Blog";
-    require 'includes/header.php'; 
-
+    require 'includes/header.php';
     require "database.php";
 
     $statement = $pdo->prepare("SELECT * FROM posts");
@@ -15,6 +16,7 @@
         $statement->execute([$post_id]);
 
         header("Location: blog.php");
+        exit;
     }
 
 ?>

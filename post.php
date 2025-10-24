@@ -1,4 +1,6 @@
 <?php
+    ob_start();
+    
     $title = "Posts";
     require 'includes/header.php';
     require "database.php";
