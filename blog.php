@@ -60,6 +60,14 @@
                         </div>
                 <?php endif; ?>
 
+                <?php 
+                    if(isset($_SESSION["post-edited"])): ?>
+                        <div class="alert alert-primary" role="alert">
+                            <?= $_SESSION["post-edited"]; ?>
+                            <?php unset($_SESSION["post-edited"]); ?>
+                        </div>
+                <?php endif; ?>
+
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                         <!-- 9 Identical Album cards) -->
                     <?php foreach($posts as $post): ?>
