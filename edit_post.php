@@ -39,7 +39,8 @@
         </div>
 
         <form method="post" action="">
-            <input type="hidden" name="PUT" value="<?= $post["id"] ?>">
+            <input type="hidden" name="PUT">
+            <input type="hidden" name="post_id" value="<?= $post["id"] ?>">
             <h1><?= $post["id"] ?></h1>
             <div class="mb-3 my-5">
                 <label class="form-label">Title</label>
