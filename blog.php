@@ -77,7 +77,7 @@
                                     <p class="card-text"> <?= $post["body"]; ?></p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                            <a href="edit_post.php?id=<?= $post['id']; ?>" class="btn btn-sm btn-outline-secondary">Edit</a>
 
                                             <form method="post" action="" onsubmit="return confirm('Are you sure you want to delete this post?');" style="display: inline;">
                                                 <input type="hidden" name="post_id" value="<?= $post['id']; ?>">
