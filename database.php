@@ -1,8 +1,7 @@
 <?php 
-    $servername = "localhost";
-    $username = "root";
+    $username = "if0_40257292"; // InfinityFree bergan
     $password = "";
-    $database = "php_blog";
+    $database = "if0_40257292_php_blog";
 
     try {
         $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
