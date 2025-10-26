@@ -1,6 +1,6 @@
-<?php 
+<?php
     $title = "Home";
-    require 'includes/header.php'; 
+    require 'includes/header.php';
     require "database.php";
 ?>
 
@@ -32,7 +32,7 @@
                     <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
                 </svg>
                 <div class="container">
-                    <div class="carousel-caption"> 
+                    <div class="carousel-caption">
                         <img src="./images/tesla.jpg" alt="Image 2" class="d-block mx-auto mb-4" style="width: 60%; height: auto;">
                         <h1>Another example headline.</h1>
                         <p>Some representative placeholder content for the second slide of the carousel.</p>
@@ -63,7 +63,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-        
+
     </section>
 
     <section class="container marketing">
@@ -148,7 +148,7 @@
         <hr class="featurette-divider">
     </section>
 
-    
+
 </main>
 
 <?php require 'includes/footer.php'; ?>
