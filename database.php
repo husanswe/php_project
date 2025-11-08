@@ -1,8 +1,9 @@
 <?php 
+    $servername = "localhost";
     $username = "if0_40257292"; 
     $password = "VMM8YMzOuM30CH0";
     $database = "if0_40257292_php_blog";
-    $servername = "sql100.infinityfree.com";
+    
 
     try {
         $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
