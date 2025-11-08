@@ -2,12 +2,11 @@
     $title = "Home";
     require 'includes/header.php';
     require "database.php";
-?>
 
-<?php
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
 ?>
+
 
 <main>
     <section id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
