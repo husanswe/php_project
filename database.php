@@ -1,8 +1,8 @@
 <?php 
-    $servername = "localhost";
-    $username = "if0_40257292"; 
-    $password = "VMM8YMzOuM30CH0";
-    $database = "if0_40257292_php_blog";
+    $servername = getenv('MYSQLHOST') ?: "localhost";
+    $username = getenv('MYSQLUSER') ?: "root"; 
+    $password = getenv('MYSQLPASSWORD') ?: "";
+    $poty = getenv('MYSQLPORT') ?: '3306';
     
 
     try {
