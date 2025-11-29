@@ -1,3 +1,10 @@
 {
-  "start": "php -S 0.0.0.0:$PORT"
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "RAILPACK"
+  },
+  "deploy": {
+    "startCommand": "php -S 0.0.0.0:$PORT"
+  }
+
 }
