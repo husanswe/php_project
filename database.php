@@ -1,21 +1,38 @@
-<?php 
-    $servername = getenv('MYSQLHOST') ?: "localhost";
-    $username = getenv('MYSQLUSER') ?: "root"; 
-    $password = getenv('MYSQLPASSWORD') ?: "";
-    $database = getenv('MYSQLDATABASE') ?: 'php_blog';
-    $port = getenv('MYSQLPORT') ?: '3306';
-    
-    $dsn = "mysql:host=$servername;port=$port;dbname=$database;charset=utf8mb4";
-    
-    try {
-        $pdo = new PDO($dsn, $username, $password, [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-    ]);
-        // echo "Connected successfully";
-    } catch(PDOException $e) {
-        http_response_code(500);
-        die("DB connection error");
+<?php
+    // Railway environment variables
+    $database_url = getenv('DATABASE_URL');
+
+    if ($database_url) {
+        // Production (Railway PostgreSQL)
+        $db = parse_url($database_url);
+        
+        $host = $db['host'];
+        $port = $db['port'];
+        $dbname = ltrim($db['path'], '/');
+        $user = $db['user'];
+        $password = $db['pass'];
+        
+        try {
+            $pdo = new PDO(
+                "pgsql:host=$host;port=$port;dbname=$dbname;sslmode=require",
+                $user,
+                $password,
+                [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+            );
+        } catch (PDOException $e) {
+            die("Database connection failed: " . $e->getMessage());
+        }
+    } else {
+        // Local development (MySQL)
+        try {
+            $pdo = new PDO(
+                "mysql:host=localhost;dbname=php_blog",
+                "root",
+                "",
+                [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+            );
+        } catch (PDOException $e) {
+            die("Database connection failed: " . $e->getMessage());
+        }
     }
 ?>
